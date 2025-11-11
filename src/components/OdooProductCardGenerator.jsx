@@ -6,7 +6,8 @@ import { Loader, Clipboard, Download, ChevronLeft, ChevronRight } from 'lucide-r
 import NavBar from "./NavBar";
 
 const PRODUCTS_PER_PAGE = 10;
-const API_URL = 'http://localhost:3000/api/auth/products';
+//const API_URL = 'http://localhost:3000/api/auth/products';
+const API_URL = 'https://odooprodtfrontend.vercel.app/api/auth/products';
 const MIN_SEARCH_LENGTH = 3;
 
 const sanitizeValue = (val) => (!val || val === "false" || val === false ? "" : val);
@@ -219,7 +220,8 @@ const OdooProductCardGenerator = () => {
   useEffect(() => {
     const fetchTemplate = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/template/latest");
+        //const res = await fetch("http://localhost:3000/api/template/latest");
+        const res = await fetch("https://odooprodtfrontend.vercel.app/api/template/latest");
         const data = await res.json();
         if (data?.text) {
           const lines = data.text.split(/\r?\n/).filter((l) => l.trim() !== "");
