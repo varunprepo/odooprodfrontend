@@ -1,0 +1,13 @@
+# Define services to deploy in this file
+services:
+  - type: static # Define this as a Static Site
+    name: odooprodfrontend
+    buildCommand: npm run build
+    staticRootDir: dist # The directory containing your final assets
+    routes:
+      - type: rewrite
+        source: /
+        destination: index.html
+      - type: rewrite
+        source: /!(index.html|assets)/**
+        destination: /index.html
