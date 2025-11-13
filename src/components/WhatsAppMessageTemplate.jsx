@@ -31,7 +31,7 @@ const WhatsAppMessageTemplate = () => {
         //const res = await axios.get("http://localhost:3000/api/template/latest", { withCredentials: true });
         //const res = await axios.get("https://odooprodbackend.onrender.com/api/template/latest", { withCredentials: true });
         const res = await axios.get("https://odooprodbackend.vercel.app/api/template/latest", { withCredentials: true });
-        if (res.data?.text) {
+        if (res?.data?.text) {
           setMessage(res.data.text);
         }
       } catch (err) {
