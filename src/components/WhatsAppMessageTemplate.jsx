@@ -29,7 +29,8 @@ const WhatsAppMessageTemplate = () => {
       try {
         {/* const res = await axios.get("http://127.0.0.1:3000/api/template/latest"); */}
         //const res = await axios.get("http://localhost:3000/api/template/latest", { withCredentials: true });
-        const res = await axios.get("https://odooprodbackend.onrender.com/api/template/latest", { withCredentials: true });
+        //const res = await axios.get("https://odooprodbackend.onrender.com/api/template/latest", { withCredentials: true });
+        const res = await axios.get("https://odooprodbackend.vercel.app/api/template/latest", { withCredentials: true });
         if (res.data?.text) {
           setMessage(res.data.text);
         }
@@ -52,7 +53,8 @@ const WhatsAppMessageTemplate = () => {
         else {
             {/* await axios.post("http://127.0.0.1:3000/api/template/save", { text: message }); */}
             //await axios.post("http://localhost:3000/api/template/save", { text: message, withCredentials: true });
-            await axios.post("https://odooprodbackend.onrender.com/api/template/save", { text: message, withCredentials: true });
+            //await axios.post("https://odooprodbackend.onrender.com/api/template/save", { text: message, withCredentials: true });
+            await axios.post("https://odooprodbackend.vercel.app/api/template/save", { text: message, withCredentials: true });
             setStatus("✅ Template saved successfully!");
         }
     } catch (err) {
